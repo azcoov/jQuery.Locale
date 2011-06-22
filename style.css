@@ -1,0 +1,25 @@
+body * {
+margin: 0;
+padding: 0;
+font-family: "Lucida Grande", helvetica, sans-serif;
+}
+input, textarea, select {-webkit-appearance: none;}
+input, textarea, select {
+   border: 1px solid #555;
+   padding: 0.5em;
+   font-size: 12px;
+   line-height: 1.2em;
+   width: 80%;
+   background: #fff;
+   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc));
+   -webkit-appearance: none;
+   -webkit-box-shadow: 1px 1px 1px #fff;
+   -webkit-border-radius: 0.5em;
+}
+select {
+    padding: 0.5em 1em 0.5em 0.5em;
+    background: white url("images/dd.png") no-repeat right center;
+    -webkit-background-size: 1600px 32px;
+    width:125px;
+}
+img {padding-right: 5px;};
