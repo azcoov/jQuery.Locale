@@ -2,6 +2,8 @@
 
 jQuery.Locale is a jQuery based way to render a select list of countries that will render the country flag next to the selected country. The flags used in this plugin are from [Mark James and his FAMFAMFAM site](http://www.famfamfam.com/lab/icons/flags).
 
+[working example](http://coovtech.com/projects/locale)
+
 ##Usage
 
 Include jQuery and `src/jquery.locale.js`.
@@ -29,4 +31,4 @@ The following options are available:
 -`flags` - You can narrow down the number of flags by providing only the ones you want.
 
 ## Known Bugs
-The image used to display the tag is not unique per instance. So, if you have multiple locale select lists and you change any one of the selected locals, the first flag will change, regardless of which select list was used.
+The image used to display the tag is not unique per instance. So, if you have multiple locale select lists and you change any one of the selected locals, the first flag will change, regardless of which select list was usedhttp://coovtech.com/projects/locale.
