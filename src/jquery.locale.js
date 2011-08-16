@@ -311,20 +311,12 @@
                         var idx = this.id.substring(14,this.id.length);
                         var image = $("#locale-image_" + idx);
                         var selectedLocale = $(this).val();
-                        console.log(selectedLocale);
-                        
                         var i = ArrayIndexOf(o.flags, function(obj) {
                             return obj.code == selectedLocale;
                         });
-                        
-                        console.log(i);
-                        
-                        var region = o.flags[i].region;
-                        
-                        console.log(region);
-                        
+                        var flag = o.flags[i];
                         $(image).attr('src', "images/" + selectedLocale + ".png");
-                        options.callback.call(this, region);
+                        options.callback.call(this, flag);
                     }
                 });
              

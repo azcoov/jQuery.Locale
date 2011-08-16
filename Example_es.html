@@ -14,13 +14,14 @@
     $(function() {
         
 	    $('#test').locale({
-            callback: function(region) {
+            callback: function(flag) {
+                var region = flag["region"];
                 if(region == 'en') {
                     $.datepicker.setDefaults($.datepicker.regional[""]);
                     $('#iCal').datepicker($.datepicker.regional[""]);
                 } else {
-                    $.datepicker.setDefaults($.datepicker.regional[region]);
-                    $('#iCal').datepicker($.datepicker.regional[region]);
+                    $.datepicker.setDefaults($.datepicker.regional[flag.region]);
+                    $('#iCal').datepicker($.datepicker.regional[flag.region]);
                 }
             },
 	        'flags': [{
@@ -32,9 +33,6 @@
 	            'code': 'mx',
                 'region': 'es'
 	        }]
-	    });
-	    $('#test3').locale({
-	        emptyIndex: true
 	    });
         
         $.datepicker.setDefaults($.datepicker.regional[""]);
