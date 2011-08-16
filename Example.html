@@ -4,13 +4,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>jQuery Locale</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script> 
     <script src="src/jquery.locale.js" type="text/javascript"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
 	<script> 
     $(function() {
-	    $('#test').locale();
+        
+        $('#test').locale({});
+        
 	    $('#test2').locale({
 	        'flags': [{
 	            'name': 'United States',
@@ -20,18 +21,17 @@
 	            'code': 'mx'
 	        }]
 	    });
+        
 	    $('#test3').locale({
 	        emptyIndex: true
 	    });
-	    $(document).bind('change.locale', function() {
-	        alert('select clicked');
-	    });
+        
 	}); 
     </script>
 </head>
 <body>
     <h3>All flags</h3>
-	<div id="test"></div>
+	<div id="test"></div><br/>
     <br/>
     <br/>
     <h3>U.S. and Mexico only</h3>

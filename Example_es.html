@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>jQuery Locale</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js" type="text/javascript"></script> 
+    <script src="src/jquery.locale.js" type="text/javascript"></script>
+    <script src="src/jquery.ui.datepicker-es.js" type="text/javascript"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/themes/base/jquery-ui.css" type="text/css" media="all" />
+	<script> 
+    $(function() {
+        
+	    $('#test').locale({
+            callback: function(region) {
+                if(region == 'en') {
+                    $.datepicker.setDefaults($.datepicker.regional[""]);
+                    $('#iCal').datepicker($.datepicker.regional[""]);
+                } else {
+                    $.datepicker.setDefaults($.datepicker.regional[region]);
+                    $('#iCal').datepicker($.datepicker.regional[region]);
+                }
+            },
+	        'flags': [{
+	            'name': 'United States',
+	            'code': 'us',
+                'region': 'en'
+	        }, {
+	            'name': 'Mexico',
+	            'code': 'mx',
+                'region': 'es'
+	        }]
+	    });
+	    $('#test3').locale({
+	        emptyIndex: true
+	    });
+        
+        $.datepicker.setDefaults($.datepicker.regional[""]);
+        $("#iCal").datepicker();
+        
+	}); 
+    </script>
+</head>
+<body>
+
+    <h3>U.S. and Mexico only</h3>   
+    <p>This example changes the date picker locale on the change event<p><br/>
+    
+	<div id="test"></div><br/>
+    <input id="iCal" type="text" style="width:100px;"/>
+    
+</body>
+</html>
